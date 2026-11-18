@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description"
+        content="Sohel Rana, BSc in CSE, Northern University Bangladesh. Research in neural network architectures, explainable AI and computer vision.">
+    <title>Sohel Rana | Academic Portfolio</title>
+    <style>
+        :root {
+            --ink: #1b2a41;
+            --muted: #5b6678;
+            --accent: #2b5c8a;
+            --paper: #f6f7f9;
+            --line: #dde2ea;
+            --card: #fff;
+            --tint: #e9eef5;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+
+        @media(prefers-color-scheme:dark) {
+            :root:not([data-theme="light"]) {
+                --ink: #e8edf5;
+                --muted: #a3adbd;
+                --accent: #7fb0e3;
+                --paper: #12161d;
+                --line: #2a3241;
+                --card: #1a202b;
+                --tint: #1f2733;
+                color-scheme: dark
+            }
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px
+        }
+
+        body {
+
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font: 16px/1.7 Georgia, serif
+        }
+
+        a {
+            color: var(--accent);
+            text-underline-offset: 4px
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #c98a3d;
+            outline-offset: 4px
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 28px
+        }
+
+        .top {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: var(--paper);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 16px 28px
+        }
+
+        .brand {
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 1.15rem
+        }
+
+        .links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap
+        }
+
+        .links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: .95rem
+        }
+
+        .links a:hover {
+            color: var(--accent)
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 50px;
+            align-items: center;
+            padding: 56px 0
+        }
+
+        h1 {
+            font: 500 clamp(2.5rem, 2rem + 3vw, 3.8rem)/1.1 Georgia, serif;
+            letter-spacing: -1.5px;
+            margin: 0 0 14px
+        }
+
+        .sub {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin: 0 0 20px
+        }
+
+        .facts {
+            padding-left: 20px;
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .facts li {
+            margin: 10px 0
+        }
+
+        .facts strong {
+            color: var(--ink)
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 26px
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border: 1px solid var(--line);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .97rem
+        }
+
+        .btn.primary {
+            background: var(--ink);
+            color: var(--paper);
+            border-color: var(--ink)
+        }
+
+        .portrait {
+            width: 220px;
+            height: 270px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .note {
+            text-align: center;
+            color: var(--muted);
+            font-size: .9rem;
+            margin: 14px 0 0
+        }
+
+        .socials {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .socials a {
+            text-decoration: none
+        }
+
+        .section {
+            padding: 48px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        h2 {
+            font: 400 2rem/1.2 Georgia, serif;
+            margin: 0 0 22px;
+            letter-spacing: -.5px
+        }
+
+        .lead {
+            color: var(--muted);
+            max-width: 780px;
+            margin: 0 0 18px
+        }
+
+        ul.list {
+            padding-left: 22px;
+            margin: 0;
+            max-width: 900px
+        }
+
+        ul.list li {
+            margin: 0 0 12px;
+            color: var(--muted)
+        }
+
+        ul.list li::marker {
+            color: var(--accent)
+        }
+
+        ul.list strong {
+            color: var(--ink);
+            font-weight: 650
+        }
+
+        .cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px
+        }
+
+        .panel {
+            border-top: 2px solid var(--accent);
+            padding-top: 18px
+        }
+
+        .panel h3 {
+            font-size: 1.2rem;
+            margin: 0 0 14px
+        }
+
+        .box {
+            background: var(--tint);
+            padding: 24px 28px;
+            border-radius: 6px;
+            margin-top: 28px
+        }
+
+        .box h3 {
+            margin: 0 0 14px;
+            font-size: 1.2rem
+        }
+
+        .record {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .record:first-of-type {
+            padding-top: 0
+        }
+
+        .record:last-child {
+            border: 0;
+            padding-bottom: 0
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: flex-start;
+            margin-bottom: 8px
+        }
+
+        .record h3 {
+            font-size: 1.2rem;
+            margin: 0 0 4px;
+            line-height: 1.4
+        }
+
+        .inst {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .date {
+            background: var(--tint);
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: .85rem;
+            white-space: nowrap;
+            flex-shrink: 0
+        }
+
+        .filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 12px
+        }
+
+        .filters button {
+            font: inherit;
+            font-size: .95rem;
+            border: 1px solid var(--line);
+            background: transparent;
+            color: var(--muted);
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer
+        }
+
+        .filters button[aria-pressed=true] {
+            background: var(--ink);
+            color: var(--paper);
+            border-color: var(--ink)
+        }
+
+        .pub {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 22px
+        }
+
+        .pub[hidden] {
+            display: none
+        }
+
+        .pub-meta {
+            color: var(--accent);
+            font-size: .85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4px
+        }
+
+        .pub h3 {
+            margin: 0 0 8px;
+            font-size: 1.15rem;
+            line-height: 1.5
+        }
+
+        .pub p {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        details {
+            border: 1px solid var(--line);
+            border-radius: 5px;
+            background: var(--card);
+            margin-top: 14px
+        }
+
+        summary {
+            cursor: pointer;
+            padding: 12px 18px;
+            font-weight: 600;
+            color: var(--accent)
+        }
+
+        details>div {
+            padding: 0 20px 16px;
+            color: var(--muted)
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px 40px
+        }
+
+        .cat {
+            border-top: 1px solid var(--line);
+            padding-top: 16px
+        }
+
+        .cat h3 {
+            margin: 0 0 10px;
+            font-size: 1.05rem
+        }
+
+        footer {
+            padding: 24px 0;
+            color: var(--muted);
+            font-size: .92rem
+        }
+
+        .foot {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px
+        }
+
+        @media(max-width:760px) {
+            .wrap {
+                padding: 0 20px
+            }
+
+            .nav {
+                padding: 14px 20px
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 36px 0
+            }
+
+            .portrait {
+                width: 90px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                font-size: 32px;
+                order: -1
+            }
+
+            .note {
+                display: none
+            }
+
+            .cols,
+            .grid2 {
+                grid-template-columns: 1fr
+            }
+
+            .top-row {
+                flex-direction: column;
+                gap: 8px
+            }
+
+            .date {
+                order: -1
+            }
+
+            .pub {
+                grid-template-columns: 1fr;
+                gap: 8px
+            }
+
+            .pub-meta {
+                flex-direction: row;
+                gap: 14px
+            }
+
+            .foot {
+                flex-direction: column
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="top">
+        <nav class="wrap nav" aria-label="Main"><a class="brand" href="#">Sohel Rana</a>
+            <div class="links"><a href="#about">About</a><a href="#research">Research</a><a
+                    href="#publications">Publications</a><a href="#experience">Experience</a><a
+                    href="#education">Education</a><a href="#skills">Skills</a><a href="#references">Academic
+                    References</a><a href="#contact">Contact</a></div>
+        </nav>
+    </header>
+    <main class="wrap">
+        <section class="hero">
+            <div>
+                <h1>Sohel Rana</h1>
+                <p class="sub">Neural Networks, explainable AI and ML for Environmental Application </p>
+                <ul class="facts">
+                    <li><strong>Education:</strong> BSc in Computer Science and Engineering, Northern University
+                        Bangladesh</li>
+                    <li><strong>Thesis:</strong> DroughtNet, satellite-driven drought vulnerability mapping for
+                        Bangladesh</li>
+                    <li><strong>Now:</strong> Lecturer (ICT) and thesis-based Master's opportunities</li>
+                </ul>
+                <div class="actions"><a class="btn primary" href="#research">View research</a><a class="btn"
+                        href="#contact">Get in touch</a></div>
+            </div>
+            <div>
+                <div class="portrait">
+                    <img src="profile.png" alt="Sohel Rana">
+                </div>
+                <p class="note">Dhaka, Bangladesh</p>
+            </div>
+        </section>
+        <div class="socials" aria-label="Profiles"><a
+                href="https://www.researchgate.net/profile/Sohel-Rana-102?ev=hdr_xprf">ResearchGate</a><a
+                href="https://github.com/sohelrana-10">GitHub</a><a
+                href="https://www.linkedin.com/in/sohel-rana10/">LinkedIn</a><a
+                href="https://leetcode.com/u/sohel_rana10/">LeetCode</a><a
+                href="mailto:thesohelranabhuiyan@gmail.com">Email</a></div>
+
+        <section class="section" id="about">
+            <h2>Background</h2>
+            <p class="lead">I study how neural networks learn and why they generalize, and I apply them to problems that
+                matter locally, such as drought risk across Bangladesh.</p>
+            <ul class="list">
+                <li><strong>Approach:</strong> Build AI systems that are accurate, interpretable, fair, and clinically
+                    meaningful.</li>
+                <li><strong>Applications: </strong> Clinical prediction, patient-level analysis, and healthcare decision
+                    support.</li>
+                <li><strong>Across modalities:</strong> Electronic health records (EHRs), clinical text,
+                    structured/tabular data, biomedical signals, and medical images.</li>
+            </ul>
+        </section>
+
+        <section class="section" id="research">
+            <h2>Research</h2>
+            <div class="cols">
+                <article class="panel">
+                    <h3>Undergraduate thesis</h3>
+                    <ul class="list">
+                        <li><strong>DroughtNet:</strong> Satellite-driven drought vulnerability mapping for all 64
+                            districts of Bangladesh using machine learning.</li>
+                    </ul>
+                </article>
+                <article class="panel">
+                    <h3>Research interests</h3>
+                    <ul class="list">
+                        <li>Machine Learning</li>
+                        <li>Neural network architectures and representation learning</li>
+                        <li>Generalization and optimization</li>
+                        <li>Explainable AI</li>
+                        <li>ML for Environmental and Climate Applications
+                        </li>
+                        <li>Healthcare AI</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="publications">
+            <h2>Publications and ongoing work</h2>
+            <div class="filters" role="group" aria-label="Filter publications">
+                <button data-f="all" aria-pressed="true">All work</button><button data-f="Thesis"
+                    aria-pressed="false">Thesis</button><button data-f="Paper" aria-pressed="false">Papers</button>
+            </div>
+            <p id="count" role="status" style="color:var(--muted);font-size:.9rem;margin:0 0 6px"></p>
+            <article class="pub" data-k="Thesis">
+                <div class="pub-meta"><span>Thesis</span><span>2026</span></div>
+                <div>
+                    <h3>DroughtNet: Satellite-Driven Drought Vulnerability Mapping for All 64 Districts of Bangladesh
+                        Using Machine Learning</h3>
+                    <p><strong>Institution:</strong> Northern University Bangladesh</p>
+                    <details>
+                        <summary>Summary</summary>
+                        <div>
+                            <p>Drought is among the most pervasive climate
+                                hazards affecting agricultural productivity and food
+                                security in Bangladesh, particularly in the northwestern
+                                Barind Tract. Prior machine-learning studies of
+                                Bangladesh drought classification covered only 38 of the
+                                country's 64 districts, and their preprocessing pipeline had
+                                not previously been independently replicated. This paper
+                                makes three contributions: 1) an analysis of the most
+                                recent published baseline, highlighting methodological
+                                observations on data preprocessing and model evaluation,
+                                including variations in test-set composition across models
+                                (2) an alternative pipeline in which scaling and clustering
+                                are fitted exclusively on training data; and (3) an extension
+                                to all 64 districts with Multilayer Perceptron (MLP) and
+                                Long Short-Term Memory (LSTM) classifiers, producing
+                                the nationwide ML-based drought exposure map for the
+                                country. The classical machine learning classifiers
+                                achieved test accuracies ranging from 85.92% to 90.31%.
+                                Among all evaluated models, the MLP achieved the best
+                                performance with an accuracy of 93.82% (weighted F1 =
+                                93.81%), followed by the LSTM with an accuracy of
+                                92.70%. SHAP explainability analysis agrees, in feature
+                                ranking, with temperature (T2M, TS) and surface soil
+                                moisture (GWETTOP) as the dominant drivers across
+                                MLP SHAP, RF SHAP, and RF Gini importance. The map
+                                identifies Chapainawabganj (35.42%) as most exposed
+                                and Sylhet (9.45%) as least, consistent with the
+                                documented Barind Tract drought zone.</p>
+                        </div>
+                    </details>
+                </div>
+            </article>
+            <article class="pub" data-k="Paper">
+                <div class="pub-meta"><span>Paper</span><span>Year</span></div>
+                <div>
+                    <h3>Add a paper title here</h3>
+                    <p><strong>Authors:</strong> Sohel Rana, co-authors. <strong>Venue:</strong> journal or conference.
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section class="section" id="experience">
+            <h2>Experience</h2>
+            <article class="record">
+                <div class="top-row">
+                    <div>
+                        <h3>Lecturer (ICT)</h3>
+                        <p class="inst">Kabi Nazrul School and College</p>
+                    </div><span class="date">Oct 2026 – Present</span>
+                </div>
+                <ul class="list">
+                    <li>Teach Higher Secondary ICT: Artificial Intelligence, Robotics, Networking, Digital Logic, Web
+                        Design using HTML, C Programming, Algorithms, and Database Management Systems.</li>
+                </ul>
+            </article>
+            <article class="record">
+                <div class="top-row">
+                    <div>
+                        <h3>Mentor</h3>
+                        <p class="inst">NUB Computer Club, Northern University Bangladesh</p>
+                    </div><span class="date">Mar 2026 – Present
+                    </span>
+                </div>
+                <ul class="list">
+                    <li>Lead Python problem-solving sessions; mentor students in programming fundamentals, algorithmic
+                        thinking, and competitive programming.
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="section" id="education">
+            <h2>Education</h2>
+            <article class="record">
+                <div class="top-row">
+                    <div>
+                        <h3>Bachelor of Science in Computer Science and Engineering</h3>
+                        <p class="inst">Northern University Bangladesh</p>
+                    </div><span class="date">Jan 2023 – Sep 2026</span>
+                </div>
+                <ul class="list">
+                    <li><strong>CGPA:</strong> 3.987/4.00</li>
+                    <li><strong>Thesis:</strong> DroughtNet</li>
+                </ul>
+            </article>
+            <article class="record">
+                <div class="top-row">
+                    <div>
+                        <h3>Higher Secondary Certificate (HSC)</h3>
+                        <p class="inst">Hazi Belayet Hossain Degree College</p>
+                    </div><span class="date"> Aug 2018 – Jan 2021</span>
+                </div>
+                <ul class="list">
+                    <li><strong>GPA:</strong> 5.00/5.00</li>
+
+                </ul>
+            </article>
+            <article class="record">
+                <div class="top-row">
+                    <div>
+                        <h3>Secondary School Certificate (SSC)</h3>
+                        <p class="inst">Kabi Nazrul School & College</p>
+                    </div><span class="date">Jan 2016 – Apr 2018</span>
+                </div>
+                <ul class="list">
+                    <li><strong>GPA:</strong> 5.00/5.00</li>
+
+                </ul>
+            </article>
+        </section>
+
+        <section class="section" id="skills">
+            <h2>Technical skills</h2>
+            <div class="grid2">
+                <article class="cat">
+                    <h3>Programming languages</h3>
+                    <ul class="list">
+                        <li>Python,C,C++,Java</li>
+                    </ul>
+                </article>
+                <article class="cat">
+                    <h3>Machine learning</h3>
+                    <ul class="list">
+                        <li>Numpy,Pandas,Matplotlib,Seaborn,PyTorch<br>Scikit-learn,SHAP</li>
+                    </ul>
+                </article>
+                <article class="cat">
+                    <h3>Development Tools</h3>
+                    <ul class="list">
+                        <li>VS Code, Google Colab, Git, Latex </li>
+                    </ul>
+                </article>
+                <article class="cat">
+                    <h3>Problem solving</h3>
+                    <ul class="list">
+                        <li>300+ LeetCode problems</li>
+                    </ul>
+                </article>
+                <article class="cat">
+                    <h3>Expertise</h3>
+                    <ul class="list">
+                        <li> Data Structures, Algorithms ,OOP, Data Analysis & Preprocessing,
+                            Machine Learning & Neural Networks
+                        </li>
+                    </ul>
+                </article>
+                <article class="cat">
+                    <h3>Languages</h3>
+                    <ul class="list">
+                        <li>Bengali (Fluent) and English (Fluent)</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="references">
+            <h2>Academic References</h2>
+
+            <article class="record">
+                <div class="top-row">
+                    <div>
+                        <h3>Syed Maruful Huq</h3>
+                        <p class="inst">
+                            Assistant Professor, Department of Computer Scinece & Engineering,
+                            Northern University Bangladesh, Bangladesh
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    <a href="mailto:maruful@gmail.com">maruful@gmail.com</a>
+                </p>
+            </article>
+
+            <article class="record">
+                <div class="top-row">
+                    <div>
+                        <h3>Md. Raihan-Ul Massod
+                        </h3>
+                        <p class="inst">
+                            Associate Professor & Head, Department of Computer Science & Engineering
+                            Northern University Bangladesh
+
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    <a href="mailto:bdraihan@nub.ac.bd">bdraihan@nub.ac.bd</a>
+                </p>
+            </article>
+        </section>
+
+        <section class="section" id="contact" style="border:0">
+            <h2>Contact</h2>
+            <p class="lead">For research conversations and academic collaboration.</p>
+            <ul class="list">
+                <li><strong>Email:</strong>
+                    <ul>
+                        <li><strong>Official:</strong> <a
+                                href="mailto:rana_41220300573@nub.ac.bd">rana_41220300573@nub.ac.bd</a></li>
+                        <li><strong>Personal:</strong> <a
+                                href="mailto:thesohelranabhuiyan@gmail.com">thesohelranabhuiyan@gmail.com</a>
+                    </ul>
+
+                </li>
+            </ul>
+            <li><strong>Location:</strong> Dhaka, Bangladesh(GMT:+6)</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap foot"><span>© <span id="y">2026</span> Sohel Rana</span><a href="#">Back to top</a></div>
+    </footer>
+    <script>
+        const ps = [...document.querySelectorAll('.pub')], c = document.getElementById('count');
+        function f(k) { let n = 0; ps.forEach(p => { p.hidden = k !== 'all' && p.dataset.k !== k; if (!p.hidden) n++ }); c.textContent = n + (n === 1 ? ' work shown' : ' works shown') }
+        document.querySelectorAll('[data-f]').forEach(b => b.addEventListener('click', () => { document.querySelectorAll('[data-f]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); f(b.dataset.f) }));
+        f('all'); document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
